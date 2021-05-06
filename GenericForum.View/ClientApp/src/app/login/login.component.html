@@ -1,0 +1,32 @@
+<div class="bg-white container p-5 shadow p-3 mb-5 bg-white rounded">
+    <h1 class="text-center p-4">Welcome</h1>
+
+    <div class="row justify-content-center p-5">
+
+        <form class="col-4" [formGroup]="LoginFormGroup" (submit)="SendLogin()">
+
+            <div *ngIf="ClientinValid" class="alert err">
+                UserName or Password Invalid!
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nick</label>
+                <input type="email" class="form-control" formControlName="userName">
+            </div>
+    
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+            
+            <button [disabled]="LoginFormGroup.invalid" type="submit" class="btn btn-secondary btn-lg btn-block">Login</button>
+
+            <p>New? <a routerLink="/register" >Sign Up</a></p>
+    
+        </form>
+
+        
+
+    </div>
+    
+</div>

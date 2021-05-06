@@ -1,0 +1,54 @@
+<div class="bg-white container p-5 shadow p-3 mb-5 bg-white rounded">
+    <h1 class="text-center p-4">Create Topic</h1>
+
+    <form [formGroup]="TopicFormGroup" (submit)="submitTopic()" >
+
+        <div class="p-5 ">
+
+            <div class="form-group">
+              <label for="">Title</label>
+              <input type="text" class="form-control" formControlName="title" >
+
+              <div *ngIf="title.invalid" class="err">
+
+                <div *ngIf="title.errors?.required">
+                    Title is required.
+                </div>
+                <div *ngIf="title.errors?.minlength">
+                    Title Min of 8.
+                </div>
+                <div *ngIf="title.errors?.maxLength">
+                    Title max of 30.
+                </div>
+
+              </div>
+              
+            </div>
+
+            <div class="form-group">
+
+                <label>Text</label>
+                <textarea class="form-control" cols="30" rows="10" formControlName="subtitle"></textarea>
+
+                <div *ngIf="subtitle.invalid" class="err">
+
+                    <div *ngIf="subtitle.errors?.required">
+                        Text is required.
+                    </div>
+                    
+                    <div *ngIf="subtitle.errors?.maxLength">
+                        Text max of 255.
+                    </div>
+    
+                  </div>
+                
+            </div>
+            
+        </div>
+
+        <button type="submit" [disabled]="TopicFormGroup.invalid" class="btn btn-secondary ml-5">Submit Topic</button>
+
+    </form>
+
+
+</div>

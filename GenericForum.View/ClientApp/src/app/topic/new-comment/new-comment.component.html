@@ -1,0 +1,16 @@
+<div class="form-group">
+
+    <label>Comment as </label>
+
+
+    <textarea class="form-control submit-textarea" placeholder="what do you think about?" cols="30" rows="4" [formControl]="commentControl"></textarea>
+
+    <div class="submit-area">
+        <button (click)="SubmitComment()" [disabled]="commentControl.invalid"  class="btn btn-primary submit-button"> Comment </button>
+    </div>
+
+    
+
+    
+    
+</div>

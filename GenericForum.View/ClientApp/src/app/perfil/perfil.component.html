@@ -1,0 +1,26 @@
+
+<div class="container">
+
+    <div class="bg-white shadow mb-5 bg-white rounded row">
+
+        <div class="col-8 p-5">
+            <h4>{{ perfil?.userName }}</h4>
+
+            <h6>{{ perfil?.biografia }}</h6>
+
+        </div>
+
+        <div class="col-4 p-0">
+            <img class="perfil-img" src="https://www.xovi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="">
+        </div>
+
+    </div>
+
+    <div>
+
+        <fg-perfil-list-topic-brief [topicsBrief]="perfil?.topicBrief" ></fg-perfil-list-topic-brief>
+        
+    </div>
+    
+    
+</div>

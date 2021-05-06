@@ -1,0 +1,93 @@
+<div class="bg-white container p-5 shadow p-3 mb-5 bg-white rounded">
+    <h1 class="text-center p-4">Register</h1>
+
+    <form [formGroup]="RegisterClientGroup" class="row justify-content-md-center" (submit)="SendClient()" >
+
+        <div class="col-8 p-5 ">
+
+            <div class="form-group">
+              <label for="">Nick Name</label>
+              <input type="text" class="form-control" formControlName="login" >
+
+              <div *ngIf="login.invalid" class="err">
+
+                <div *ngIf="login.errors?.required">
+                  Name is required.
+                </div>
+                <div *ngIf="login.errors?.minlength">
+                  Name Min of 6.
+                </div>
+                <div *ngIf="login.errors?.maxLength">
+                  Name max of 20.
+                </div>
+
+                <div *ngIf="login.errors?.userNameisAvailable">
+                  UserName Aready in use.
+                </div>
+
+              </div>
+              
+            </div>
+
+            <div class="form-group">
+
+                <label for="">Email address</label>
+                <input type="email" class="form-control" formControlName="emailAddress" >
+
+                <div *ngIf="emailAddress.invalid" class="err">
+
+                  <div *ngIf="emailAddress.errors?.required">
+                    Email is required.
+                  </div>
+                  <div *ngIf="emailAddress.errors?.email">
+                    Email invalid.
+                  </div>
+                 
+                </div>
+                
+            </div>
+
+            <div class="form-group">
+              <label for="">Password</label>
+              <input type="password" class="form-control" formControlName="password">
+
+              <div *ngIf="password.invalid" class="err">
+
+                <div *ngIf="password.errors?.required">
+                  Password is required.
+                </div>
+                <div *ngIf="password.errors?.minlength">
+                  Password Min of 8.
+                </div>
+                <div *ngIf="password.errors?.maxLength">
+                  Password max of 16.
+                </div>
+  
+              </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="">Confirm Password</label>
+                <input type="password" class="form-control" formControlName="confirmPassword">
+
+                <div *ngIf="RegisterClientGroup.invalid" class="err">
+
+                  <div *ngIf="password.valid && RegisterClientGroup.errors?.mustMatch">
+                    Confirm Password must be Equal a Password.
+                  </div>
+    
+                </div>
+
+            </div>
+
+            <button type="submit" [disabled]="RegisterClientGroup.invalid || RegisterClientGroup.pending"  class="my-2 col-4 btn btn-secondary">Sign Up</button>
+            
+        </div>
+
+        
+
+    </form>
+
+
+</div>

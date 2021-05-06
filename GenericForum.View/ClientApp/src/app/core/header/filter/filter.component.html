@@ -1,0 +1,23 @@
+<form class="form-inline">
+
+    <div class="container">
+
+        <div class="col">
+
+            <div class="input-group col">
+
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Search</span>
+                </div>
+                
+                <input id="menu1" (focus)="FilterToggle()" (focusout)="FilterToggle()" (input)="$inputReceive.next($event.target.value)" autocomplete="off" type="text" class="form-control" placeholder="Find">
+                
+            </div>
+            
+        </div>
+
+
+    </div>
+
+    
+</form>

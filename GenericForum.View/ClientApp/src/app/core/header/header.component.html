@@ -1,0 +1,31 @@
+
+<nav class="fixed-top navbar navbar-light bg-light d-flex justify-content-between shadow p-3 px-5 mb-5 bg-white">
+
+    <div>
+        <a class="navbar-brand" routerLink="">
+            <img src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            ForumGeneric
+          </a>
+    </div>
+
+   <!-- <div class="col-6">
+        <fg-head-filter></fg-head-filter>
+   </div> -->
+
+    
+
+    <div>
+        <div *ngIf="UserData; else logSign">
+            Hello, <a routerLink="/perfil/{{UserData.nameid}}">{{ UserData.sub }}</a>  <a class="ml-3" href="#" (click)="logout()"> Log out</a>
+        </div>
+        <ng-template #logSign>
+
+            <a routerLink="login">
+                Log in / Sign Up 
+            </a>
+            
+        </ng-template>
+        
+    </div>
+
+  </nav>

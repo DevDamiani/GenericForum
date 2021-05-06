@@ -1,0 +1,33 @@
+
+<div class="container">
+    <div class="topic bg-light pt-3 pb-5 px-5 mt-5 shadow p-3 mb-5 bg-white rounded">
+
+    
+        <div class="mb-5">
+            <p class="font-italic"><a routerLink="/perfil/{{ ClientId }}">{{UserName}}</a></p>
+    
+            <h5 class="mb-4" >{{Title}}</h5>
+        
+            <p class="font-weight-light text-format">
+                {{SubTitle}}
+            </p>
+        </div>
+
+        <div class="mx-3">
+
+            <div *ngIf="userData" class="mb-5">
+
+                <fg-new-comment></fg-new-comment>
+                
+            </div>
+    
+            <div>
+                
+                <fg-list-comment [comments]="comments" ></fg-list-comment>
+    
+            </div>
+
+        </div>
+        
+    </div>
+</div>

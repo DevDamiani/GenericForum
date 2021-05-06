@@ -1,0 +1,21 @@
+.topic{
+    border-style: solid;
+    border-color: white;
+}
+.topic:hover{
+    
+    border-style: solid;
+    border-color: #333333;
+}
+
+.cancela,.cancela:link,.cancela:visited,.cancela:hover,.cancela:focus,.cancela:active{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.text-format{
+    white-space: break-spaces;
+
+    font-weight: 300 !important;
+}
